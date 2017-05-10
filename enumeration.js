@@ -26,6 +26,15 @@ Enumeration.prototype = {
       }
     }
     return newArray;
+  },
+
+  some: function(array, callback){
+    for ( var item of array){
+      if (callback(item)){
+        return true;
+      }
+    }
+    return false;
   }
 
 
