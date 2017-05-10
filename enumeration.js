@@ -35,6 +35,27 @@ Enumeration.prototype = {
       }
     }
     return false;
+  },
+
+  every: function(array, callback){
+    var result;
+    for (var item of array){
+      if (callback(item)){
+        result = true;
+      }else{
+        result = false;
+        return result;
+      }
+    }
+    return result;
+  },
+
+  reduce: function(array, callback){
+    var total = 0;
+    for (var item of array){
+      total = callback(total, item);
+    }
+    return total;
   }
 
 
