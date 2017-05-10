@@ -13,11 +13,21 @@ Enumeration.prototype = {
   map: function(array, callback){
     var newArray = [];
     for ( var number of array){
-      var newNumber = number * 2;
-      newArray.push(newNumber);
+      newArray.push(callback(number));
+    }
+    return newArray;
+  },
+
+  filter: function(array, callback){
+    var newArray = [];
+    for ( var number of array){
+      if (callback(number)){
+        newArray.push(number);
+      }
     }
     return newArray;
   }
+
 
 };
 
